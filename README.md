@@ -31,5 +31,5 @@ We built Hostelify with a simple idea in mind:
 
 **Hostelify — making hostel allocation simpler, smarter, and less of a headache.** 
 
-Checkout prototype -> https://damon-coded.github.io/hostelify/
+Checkout prototype -> https://hostelifyy.github.io/
 
