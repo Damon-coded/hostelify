@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-force-light-theme>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostelify | Log in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="index.html"></a>
+    <nav>
+      
+     
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-dark btn-sm" href="admin.html">Admin Login</a>
+    </div>
+  </header>
+
+  <main>
+    
+
+    
+
+    
+
+    <section id="login" class="login-section">
+      <div>
+        <span class="eyebrow"></span>
+        <h2>Already registered?</h2>
+        <p>Sign in with your Student ID and password.</p>
+      </div>
+      <form id="loginForm" class="glass-form">
+        <label>Student ID<input id="studentId" required placeholder="e.g. ST001" autocomplete="username"></label>
+        <label>Password<input id="password" required type="password" placeholder="Your password" autocomplete="current-password"></label>
+        <button class="btn btn-primary full" type="submit">Sign in <span>→</span></button>
+        <div id="loginMessage" class="form-message"></div>
+        <p class="form-foot">New student? <a href="register.html">Register here</a></p>
+      </form>
+    </section>
+
+    <section id="announcementsPanel" class="announcement-panel">
+      <span class="eyebrow">LIVE STATUS</span>
+      <h2>Announcements</h2>
+      <div id="announcementList" class="announcement-list">
+        <div class="announcement-item"><span class="announcement-dot"></span><div><strong>Loading latest updates...</strong></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="brand"></div><span></span></footer>
+</div>
+<div id="toast" class="toast"></div>
+<script src="api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" data-force-light-theme>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostelify | Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage">
+<header class="topbar"><a class="brand" href="index.html"></a><div class="header-actions"><a class="btn btn-ghost btn-sm" href="index.html">← Back</a></div></header>
+<main class="form-page">
+  <div class="form-intro"><span class="eyebrow"></span><h1>Register Here!</h1><p>Register with your Student ID and password.</p></div>
+  <form id="registerForm" class="card-form">
+    <div class="form-section">
+      
+      <label>Student ID<input id="rStudentId" required placeholder="ST001" autocomplete="username"></label>
+      <label>Password<input id="rPassword" required type="password" minlength="6" placeholder="At least 6 characters" autocomplete="new-password"></label>
+      <label>Confirm password<input id="rConfirm" required type="password" minlength="6" placeholder="Repeat password" autocomplete="new-password"></label>
+    </div>
+    
+    <div id="registerMessage" class="form-message"></div>
+    <button class="btn btn-primary full" type="submit">Create account <span>→</span></button>
+    <p class="form-foot">Already registered? <a href="index.html#login">Sign in</a></p>
+  </form>
+</main>
+<script src="api.js"></script><script src="register.js"></script>
+</body>
+</html>

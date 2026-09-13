@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostelify | Student Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+<div id="pageLoader" class="page-loader">
+  <div class="loader-card">
+    <div class="loader-mark">H</div>
+    <p id="loaderText" class="loader-text">Loading your dashboard...</p>
+    <div class="loader-track"><span id="loaderBarFill" class="loader-fill"></span></div>
+  </div>
+</div>
+<header class="dashbar"><a class="brand" href="index.html"></a><div class="dash-user"><span id="userInitials" class="avatar">ST</span><div><strong id="userName">Student</strong><small>Student portal</small></div><button id="logoutBtn" class="btn btn-ghost btn-sm">Logout</button></div></header>
+<main class="dashboard">
+  <div class="welcome"><div><span class="eyebrow"></span><h1>Hostel Form</h1><p></p></div><button id="refreshBtn" class="btn btn-ghost">↻ Refresh</button></div>
+
+  <section id="formLockedNotice" class="notice-card hidden">
+    <div class="notice-icon">🔒</div>
+    <div>
+      <strong>Hostel form is currently locked.</strong>
+      <p>The admin has temporarily disabled hostel form submissions. Please check back later.</p>
+    </div>
+  </section>
+
+  <section id="profileCard" class="profile-form-card card-form hidden">
+    
+    <form id="profileForm">
+      <div class="form-section"><div class="form-section-title">Personal details</div><div class="form-grid">
+        <label>Full name<input id="pName" required placeholder="Enter your name"></label>
+        <label>Email<input id="pEmail" type="email" required placeholder="you@example.com"></label>
+        <label>Gender<select id="pGender" required><option value="">Select gender</option><option>Male</option><option>Female</option></select></label>
+        <label>Person with disability (PWD)?<select id="pPwd" required><option value="No">No</option><option value="Yes">Yes</option></select></label>
+      </div></div>
+      <div class="form-section"><div class="form-section-title">Academic details</div><div class="form-grid">
+        <label>Course<input id="pCourse" required placeholder="eg - CSE"></label>
+        <label>Year<select id="pYear" required><option value="">Select year</option><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+        <label for="pPreference">Hostel Preference
+  <select id="pPreference" name="hostelPreference" required disabled>
+    <option value="">Select gender first</option>
+  </select>
+</label>
+        
+      </div></div>
+      <div class="form-section"><div class="form-section-title">Home details</div><div class="form-grid">
+        <label>House PIN code<input id="pPin" required inputmode="numeric" maxlength="6" placeholder="XXXXXX"></label>
+        <label>State<input id="pState" required placeholder="Enter State name"></label>
+      </div></div>
+      <div id="profileMessage" class="form-message"></div>
+      <button class="btn btn-primary full" type="submit">Save profile <span>→</span></button>
+    </form>
+  </section>
+
+  <section id="profileSubmittedNotice" class="submission-announcement hidden" aria-live="polite">
+    <div class="submission-icon">✓</div>
+    <div class="submission-content">
+      <span class="eyebrow">HOSTEL FORM SUBMITTED</span>
+      <h2>Your hostel form has been submitted.</h2>
+      <p></p>
+      <div class="submission-status"><span class="status-dot"></span><span>Submission received successfully</span></div>
+      <div class="submission-actions">
+        <button id="editProfileBtn" class="btn btn-ghost btn-sm">Edit form</button>
+        <button id="cancelRegistrationBtn" class="btn btn-danger btn-sm">Cancel registration</button>
+      </div>
+    </div>
+  </section>
+  <div id="notPublished" class="notice-card hidden"><div class="notice-icon">◷</div><div><strong>Allocation results are not published yet.</strong><p>Your application is safely recorded. Please check back after the administrator publishes results.</p></div></div>
+  <div id="resultCard" class="result-hero hidden">
+    <div><span class="eyebrow">YOUR ALLOCATION</span><h2 id="resultRemark">Welcome to your new campus home.</h2><div class="allocation-grid">
+      <div><small>HOSTEL</small><strong id="hostelName">—</strong><span id="hostelId">—</span></div>
+      <div><small>ROOM</small><strong id="roomId">—</strong><span>Allocated room</span></div>
+      <div><small>STATUS</small><strong id="resultStatus">—</strong><span>Application status</span></div>
+    </div>
+    <div class="allocation-actions">
+      <button id="cancelAllocationBtn" class="btn btn-hero-danger hidden">Cancel allocation</button>
+    </div>
+    </div>
+  </div>
+  <div class="dashboard-grid">
+    <section class="info-card priority-status-card">
+      <div class="card-title">Priority &amp; Status</div>
+      <div class="priority-status-split">
+        <div class="priority-status-half">
+          <small>LIVE PRIORITY NO.</small>
+          <strong id="priorityRank">—</strong>
+        </div>
+        <div class="priority-status-divider"></div>
+        <div class="priority-status-half">
+          <small>STATUS</small>
+          <strong id="applicationStatus">—</strong>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="api.js"></script><script src="student.js"></script>
+</body>
+</html>

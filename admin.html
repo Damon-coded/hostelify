@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostelify | Admin Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+<div id="adminActionPopup" class="admin-action-popup">
+  <div class="admin-action-popup-card">
+    <span class="admin-action-popup-spinner"></span>
+    <span id="adminActionPopupText" class="admin-action-popup-text">Working...</span>
+  </div>
+</div>
+<header class="dashbar"><a class="brand" href="index.html"><span></span></a><span class="admin-badge"></span></header>
+<main class="dashboard">
+  <div id="adminLogin" class="admin-login card-form">
+    <div class="form-intro"><h1>Admin Login</h1></div>
+    <form id="adminLoginForm"><label>Admin key<input id="adminKey" required type="password" autocomplete="off" placeholder="Enter admin key"></label><button class="btn btn-primary full">Enter console <span>→</span></button><div id="adminLoginMessage" class="form-message"></div> </form>
+  </div>
+
+  <div id="adminConsole" class="hidden">
+    <div class="welcome"><div><span class="eyebrow">ADMIN CONSOLE</span><h1>Allocation Control Center.</h1></div><button id="adminLogout" class="btn btn-ghost">Lock console</button></div>
+
+    <nav class="admin-sidebar-tabs">
+      <button class="sidebar-tab active" data-tab="overview"><span class="tab-icon">◇</span>Overview</button>
+      <button class="sidebar-tab" data-tab="allstudents"><span class="tab-icon">☰</span>All Students</button>
+      <button class="sidebar-tab" data-tab="priority"><span class="tab-icon">≡</span>Priority List</button>
+      <button class="sidebar-tab" data-tab="occupancy"><span class="tab-icon">▦</span>Occupancy</button>
+    </nav>
+
+    <div id="tab-overview" class="tab-panel">
+      <section class="control-card"><div class="form-grid admin-controls"><label>Batch ID<input id="batchId" placeholder="BATCH-001"></label><button id="summaryBtn" class="btn btn-dark">Load summary</button></div></section>
+      <div class="stats-grid">
+        <div class="stat"><small>TOTAL STUDENTS</small><strong id="total">—</strong></div><div class="stat"><small>REGISTERED</small><strong id="registered">—</strong></div><div class="stat"><small>ALLOCATED</small><strong id="allocated">—</strong></div><div class="stat"><small>NOT ALLOCATED</small><strong id="notAllocated">—</strong></div>
+      </div>
+      <section class="admin-actions">
+        <article><span class="action-num">01</span><h3>Run allocation</h3><p></p><button id="runBtn" class="btn btn-primary">Run allocation</button><div id="runMessage" class="form-message"></div></article>
+        <article><span class="action-num">02</span><h3>Publish results</h3><p></p><label class="inline-field">Remark (optional)<input id="publishRemark" type="text" maxlength="120" placeholder="e.g. Second allocation result"></label><button id="publishBtn" class="btn btn-dark">Publish results</button><div id="publishMessage" class="form-message"></div></article>
+        <article><span class="action-num">03</span><h3>Hide results</h3><p></p><button id="unpublishBtn" class="btn btn-ghost">Hide results</button><div id="unpublishMessage" class="form-message"></div></article>
+        <article><span class="action-num">04</span><h3>Lock hostel form</h3><p></p><button id="lockSubmissionBtn" class="btn btn-dark">Lock hostel form</button><div id="lockSubmissionMessage" class="form-message"></div></article>
+        <article><span class="action-num">05</span><h3>Lock edit form</h3><p></p><button id="lockEditBtn" class="btn btn-dark">Lock edit form</button><div id="lockEditMessage" class="form-message"></div></article>
+        <article class="danger-action-card"><span class="action-num">06</span><h3>Reset allocation</h3><p>Restores rooms to Available and students to Registered. Use only when necessary.</p><button id="resetBtn" class="btn btn-danger">Reset allocation</button><div id="resetMessage" class="form-message"></div></article>
+      </section>
+      <div id="adminMessage" class="form-message"></div>
+    </div>
+
+    <div id="tab-allstudents" class="tab-panel hidden">
+      <section class="control-card"><div class="form-grid admin-controls"><label>Batch ID<input id="allStudentsBatchId" placeholder="BATCH-001"></label><button id="allStudentsBtn" class="btn btn-dark">Load all students</button></div></section>
+      <div class="priority-table-wrap">
+        <table class="priority-table">
+          <thead>
+             <tr><th>#</th><th>Student ID</th><th>Name</th><th>Region</th><th>State</th><th>Zone</th><th>Distance (km)</th><th>Course</th><th>Year</th><th>Preference</th><th>PWD</th><th>Status</th><th>Allotted Hostel</th><th>Room</th><th>Score</th></tr>
+          </thead>
+          <tbody id="allStudentsTableBody"><tr><td colspan="10" class="priority-empty">Load a batch to see every submitted student.</td></tr></tbody>
+        </table>
+      </div>
+      <div id="allStudentsMessage" class="form-message"></div>
+    </div>
+
+   <div id="tab-priority" class="tab-panel hidden">
+  <section class="control-card"><div class="form-grid admin-controls"><label>Batch ID<input id="priorityBatchId" placeholder="BATCH-001"></label><button id="priorityBtn" class="btn btn-dark">Load priority list</button></div></section>
+  <div class="priority-table-wrap">
+    <table class="priority-table">
+      <thead>
+        <tr><th>#</th><th>Student ID</th><th>Name</th><th>Region</th><th>State</th><th>Zone</th><th>Distance (km)</th><th>Course</th><th>Year</th><th>Preference</th><th>PWD</th><th>Status</th><th>Allotted Hostel</th><th>Room</th><th>Score</th></tr>
+      </thead>
+      <tbody id="priorityTableBody"><tr><td colspan="15" class="priority-empty">Load a batch to see the priority-ordered list.</td></tr></tbody>
+    </table>
+  </div>
+  <div id="priorityMessage" class="form-message"></div>
+</div>
+
+    <div id="tab-occupancy" class="tab-panel hidden">
+      <section class="control-card">
+        <div class="form-grid admin-controls occupancy-controls">
+          <div class="live-indicator"><span class="live-dot"></span><span>Live</span><small id="occupancyLastUpdated">Not loaded yet</small></div>
+          <button id="occupancyRefreshBtn" class="btn btn-dark">Refresh now</button>
+        </div>
+      </section>
+      <div class="stats-grid">
+        <div class="stat"><small>TOTAL ROOMS</small><strong id="occTotalRooms">—</strong></div>
+        <div class="stat"><small>OCCUPIED</small><strong id="occOccupied">—</strong></div>
+        <div class="stat"><small>AVAILABLE</small><strong id="occAvailable">—</strong></div>
+        <div class="stat"><small>OCCUPANCY RATE</small><strong id="occRate">—</strong></div>
+      </div>
+      <div class="occupancy-list-header">
+        <span class="eyebrow">ROOM-LEVEL DETAIL</span>
+        <div class="occupancy-list-actions"><button id="occupancyExpandAllBtn" class="btn btn-ghost btn-sm">Expand all</button><button id="occupancyCollapseAllBtn" class="btn btn-ghost btn-sm">Collapse all</button></div>
+      </div>
+      <div id="occupancyHostelList" class="occupancy-hostel-list">
+        <p class="priority-empty">Open this tab to load live occupancy data.</p>
+      </div>
+      <div id="occupancyMessage" class="form-message"></div>
+    </div>
+  </div>
+</main>
+<script src="api.js"></script><script src="admin.js"></script>
+</body>
+</html>
