@@ -9,10 +9,6 @@ let formLockState = { formSubmissionLocked: false, formEditLocked: false };
 // ======================================================
 // FAKE LOADING SCREEN
 // ======================================================
-// Shown from page load until every startup fetch (form
-// lock status, profile, priority, result) has resolved.
-// A minimum display time + a slow, staged progress bar
-// keep it from flashing on fast connections.
 
 function showPageLoader() {
   const loader = document.getElementById("pageLoader");
@@ -133,11 +129,6 @@ function setUserHeader(name) {
 // ======================================================
 // TOGGLE EDIT / CANCEL REGISTRATION VISIBILITY
 // ======================================================
-// These actions only make sense BEFORE allocation has
-// run (status still "Registered"). Once allocation runs,
-// status becomes "Allocated" or "Not Allocated", and the
-// backend itself will refuse edits/cancellations anyway —
-// this just keeps the UI in sync with that rule.
 
 function updateFormActionButtons(status) {
 
