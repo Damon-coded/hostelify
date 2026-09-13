@@ -275,7 +275,7 @@ async function loadPriorityList() {
 
     const result = await withActionPopup("Loading priority list...", () => API.priorityList(batch, adminKey));
 
-    // PWD (person-with-disability) students are pulled to the top of the
+    // PWD students are pulled to the top of the
     // priority list, ahead of everyone else. Array.prototype.sort is a
     // stable sort in modern JS engines, so within each group (PWD / non-PWD)
     // students keep the relative order the backend already gave them.
