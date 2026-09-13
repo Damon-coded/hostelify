@@ -1,4 +1,4 @@
-// Replace this with your deployed Apps Script Web App URL.
+
 const API_URL = "https://script.google.com/macros/s/AKfycbyNlcuZSiiIfP4xB5aQwH5x0sbnK59AElv-2ZZ-W1nE7XUY_cz1yCC5VIMczoRrJkIObg/exec";
 
 async function apiPost(action, data = {}) {
@@ -51,15 +51,9 @@ const API = {
   announcements: () => apiPost("getPublicAnnouncements", {})
 };
 
-// ======================================================
-// THEME TOGGLE (light/dark) — shared across every page
-// ======================================================
 (function () {
   const THEME_KEY = "hostelHubTheme";
 
-  // Pages that should always render in light mode regardless of
-  // any theme saved from another page (e.g. sign in / sign up),
-  // flagged via <html data-force-light-theme> in that page's markup.
   const forceLight = document.documentElement.hasAttribute("data-force-light-theme");
 
   function preferredTheme() {
