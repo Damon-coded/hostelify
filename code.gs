@@ -1,28 +1,6 @@
 /*******************************************************
- * HOSTELHUB BACKEND
+ * HOSTELIFY BACKEND
  * Google Apps Script - code.gs
- *
- * Registration: Student ID + Password only
- * Main portal: Student completes the remaining profile/hostel form
- * Submission lock: Once the profile is complete, the form is
- *   permanently treated as submitted by the backend.
- *
- * PWD (PERSON WITH DISABILITY) SUPPORT:
- * Students declare PWD status ("Yes"/"No") as part of the hostel
- * form, stored in a "pwd" column (LAST column, after "password")
- * in the Students sheet.
- *
- * PWD students are always sorted to the very top of the
- * priority/allocation order, ahead of region/distance.
- *
- * Rooms can be reserved exclusively for PWD students by adding a
- * "pwdOnly" column to the Rooms sheet ("Yes"/"No", any position).
- * Reserved rooms are ONLY ever given to PWD students, and PWD
- * students are ONLY ever given reserved rooms.
- *
- * IMPORTANT: you must manually add these two sheet columns:
- * - Students sheet: "pwd"     (last column, after "password")
- * - Rooms sheet:    "pwdOnly" (any position; "Yes"/"No")
  *******************************************************/
 
 /* =====================================================
