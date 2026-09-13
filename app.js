@@ -27,10 +27,6 @@ if (loginForm) {
 // ======================================================
 // ANNOUNCEMENTS PANEL (sign-in page)
 // ======================================================
-// Reflects live admin state: publish/hide results,
-// lock/unlock the hostel form, lock/unlock editing.
-// Polls periodically so it stays current without a
-// page reload.
 
 function escapeAnnouncementText(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({
