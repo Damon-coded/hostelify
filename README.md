@@ -29,5 +29,7 @@ We built Hostelify with a simple idea in mind:
 
 > **Why manage hostel allocation manually when the entire process can be made digital?**
 
-**Hostelify — making hostel allocation simpler, smarter, and less of a headache.** 🚀
+**Hostelify — making hostel allocation simpler, smarter, and less of a headache.** 
+
+Checkout prototype -> https://damon-coded.github.io/hostelify/
 
